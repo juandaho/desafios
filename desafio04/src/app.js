@@ -4,6 +4,7 @@ import productRouter from "./routes/rutas_productos.js";
 import cartRouter from "./routes/rutas_carrro.js";
 import {__dirname} from "./utils.js";
 import handlebars from "express-handlebars";
+import { Server } from "socket.io";
 
 
 const app = express();
@@ -32,6 +33,17 @@ app.use("/api", productRouter);
 app.use("/api", cartRouter);
 app.use("/", viewRouter);
 
+
 const httpServer = app.listen(PORT, () => {
     console.log("server is working");
 });
+
+const socketServer = new Server(httpServer)
+
+
+
+socketServer.on("connection", (socket)=>{
+
+    console.log("Cliente conectado", socket.id)
+
+})

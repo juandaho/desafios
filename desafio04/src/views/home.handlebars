@@ -1,1 +1,25 @@
-<h1>Hola Mundo</h1>
+{{#each listaProducts}}
+<article class="product-container">
+    <div class="product-card">
+        
+        <figure class="product-imgBx">
+            <img src="{{thumbnail}}" alt="{{title}}" class="product-image" />
+        </figure>
+        
+        <div class="product-contentBx">
+            <h2 class="product-title">{{title}}</h2>
+            <p class="product-description">{{description}}</p>
+            <div class="product-info">
+                <span class="price">Price: ${{price}}</span>
+                <span class="stock">Stock: {{stock}}</span>
+            </div>
+            {{#if category}}
+            <div class="product-category">
+                <h3>Category: {{category}}</h3>
+            </div>
+            {{/if}}
+            <a href="#" class="product-buy-button" title="Comprar {{title}}">Buy Now</a>
+        </div>
+    </div>
+</article>
+{{/each}}
