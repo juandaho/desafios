@@ -5,8 +5,6 @@ export class CartManager {
     this.path = path;
   }
 
- 
-
   async getCarts() {
     try {
       if (existsSync(this.path)) {
@@ -22,7 +20,6 @@ export class CartManager {
     }
   }
 
-
   async getCartById(id) {
     const cartCompletos = await this.getCarts();
     const encontrado = cartCompletos.find(
@@ -30,7 +27,6 @@ export class CartManager {
     );
     return encontrado;
   }
-
 
   async idGenerator() {
     if (existsSync(this.path)) {
@@ -44,7 +40,6 @@ export class CartManager {
     }
   }
 
- 
   async addCart() {
     const cartList = await this.getCarts();
     const id = await this.idGenerator();

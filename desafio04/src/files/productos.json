@@ -1,15 +1,5 @@
 [
   {
-    "id": 1,
-    "title": "Keyboard",
-    "description": "Logitech ABC",
-    "price": 2500,
-    "thumbnail": "https://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761_1280.jpg",
-    "code": "keyboard01",
-    "stock": 150,
-    "status": true
-  },
-  {
     "id": 2,
     "title": "Monitor",
     "description": "Samsung DEF",
@@ -110,5 +100,16 @@
     "status": true,
     "code": "_1smartphone01",
     "stock": 110
+  },
+  {
+    "id": 13,
+    "title": "Ejemplo ",
+    "description": "Ejemplo",
+    "price": 2500,
+    "thumbnail": "https://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761_1280.jpg",
+    "category": "ejemplo",
+    "status": true,
+    "code": "ejemplo01",
+    "stock": 150
   }
 ]
