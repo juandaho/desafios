@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat General</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        main {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+        }
+        .info {
+            margin-bottom: 10px;
+        }
+        .username {
+            font-weight: bold;
+        }
+        #message_logs {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            height: 200px;
+            overflow-y: scroll;
+        }
+        #chat_box {
+            width: 75%;
+            padding: 10px;
+        }
+        #send_button {
+            width: 20%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h1>General Chat</h1>
+    <div class="info">
+        <p>User: <span class="username">{{user.first_name}} {{user.last_name}}</span></p>
+        <p hidden id="user_id">{{user._id}}</p>
+    </div>
+    <div id="message_logs"></div>
+    <input type="text" id="chat_box" placeholder="Write a message..." aria-label="Chat box" />
+    <button id="send_button" onclick="sendMessage()">Send</button>
+</main>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/chat.js"></script>
+<script>
+    function sendMessage() {
+        const chatBox = document.getElementById('chat_box');
+        const message = chatBox.value;
+        if (message) {
+            // Suponiendo que tienes una función sendChatMessage en chat.js
+            sendChatMessage(message);
+            chatBox.value = '';
+        }
+    }
+</script>
+</body>
+</html>
